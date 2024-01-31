@@ -1,0 +1,14 @@
+package com.java.student.util.security.admin;
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
+
+@RestController
+@CrossOrigin(origins = "*")
+public class BaseResource {
+	protected User getUser(HttpServletRequest request) {
+        return (User) request.getAttribute("user");
+    }
+}
